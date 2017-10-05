@@ -1,0 +1,147 @@
+{  
+   "settings":{  
+      "number_of_shards":1,
+      "number_of_replicas":0
+   },
+   "mappings":{  
+      "listing":{  
+         "properties":{  
+            "listing_id":{  
+               "type":"integer",
+			   "store": true,
+               "null_value":0
+            },
+            "title":{  
+               "type":"text",
+			   "store": true
+            },
+			"logo_name":{  
+               "type":"text",
+			   "store": true
+            },
+            "location":{  
+               "type":"nested",
+               "properties":{  
+                  "address":{  
+                     "type":"text",
+					 "store": true
+                  },
+                  "city":{  
+                     "type":"text",
+					 "store": true
+                  },
+                  "state":{  
+                     "type":"text",
+					 "store": true
+                  },
+                  "country":{  
+                     "type":"text",
+					 "store": true
+                  },
+                  "geo_location":{  
+                     "type":"geo_point",
+					 "store": true
+                  }
+               }
+            },
+            "description":{  
+               "type":"text"
+            },
+            "feature":{  
+               "type":"nested",
+               "properties":{  
+                  "featured_end":{  
+                     "type":"date"
+                  },
+                  "featured_start":{  
+                     "type":"date"
+                  },
+                  "is_featured":{  
+                     "type":"boolean",
+					 "store": true
+                  }
+               }
+            },
+            "code":{  
+               "type":"text"
+            },
+            "slug":{  
+               "type":"text"
+            },
+            "status":{  
+               "type":"text"
+            },
+            "category":{  
+               "type":"text",
+			   "store": true
+            },
+            "listing_type":{  
+               "type":"text",
+			   "store": true
+            },
+            "schedule":{  
+               "type":"text",
+			   "store": true
+            },
+            "unavailable_date":{  
+               "type":"date",
+			   "format": "yyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+            },
+			"ratings":{  
+				"type":"float",
+				"store": true
+			},
+            "price":{  
+               "type":"nested",
+               "properties":{  
+                  "activity_price":{  
+                     "type":"double",
+					 "store": true
+                  },
+                  "multimedia_price":{  
+                     "type":"double",
+					 "store": true
+                  },
+                  "transportation_price":{  
+                     "type":"double",
+					 "store": true
+                  }
+               }
+            },
+            "duration":{  
+               "type":"integer",
+			   "store": true
+            },
+            "company":{  
+               "type":"nested",
+               "properties":{  
+                  "name":{  
+                     "type":"text",
+					 "store": true
+                  },
+                  "location":{  
+                     "type":"nested",
+                     "properties":{  
+                        "address":{  
+                           "type":"text"
+                        },
+                        "city":{  
+                           "type":"text"
+                        },
+                        "state":{  
+                           "type":"text"
+                        },
+                        "country":{  
+                           "type":"text"
+                        },
+                        "geo_location":{  
+                           "type":"geo_point"
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
